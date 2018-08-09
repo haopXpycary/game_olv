@@ -1,6 +1,8 @@
 ## 帮助文档
-------
-#####[ 运行 ]
+
+---
+
+##### [ 运行 ]
 环境要求: 
 系统:  GNU/Linux | Unix
 语言:  python3 
@@ -9,8 +11,10 @@ $ cd game_olv/pyRail/
 $ chmod +x main.py
 $ python3 main.py
 ```
-------
-#####[ 项目结构 ]
+
+---
+
+##### [ 项目结构 ]
 
 - pyRail&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;存放python脚本文件及外部库
   - tests&nbsp;&nbsp;测试文件
@@ -18,8 +22,9 @@ $ python3 main.py
 
 详情请查阅uml/
 
------
-#####[ 目录 ]
+---
+
+#####  [ 目录 ]
 /pyRail
 ```
 - player         # 玩家行为及属性定义
@@ -36,9 +41,11 @@ $ python3 main.py
 - main           # 游戏运行
 ```
 
------
-#####[ 命名规范 ]
+---
+
+#####  [ 命名规范 ]
 <smart>
+  
 | 命名类型 | 范例 |
 | ------ | ------ |
 | 类名       | className     |
@@ -48,12 +55,15 @@ $ python3 main.py
 | 控制变量   | ConValName    |
 | 常函数     | FUNCNAME      |
 | 常量       | CONSTNAME     |
+
 </smart>
 
------
-#####[ 作者列表 ]
+---
+
+##### [ 作者列表 ]
 - haopXpycary
 
 ---
-#####联系方式
+
+##### [ 联系方式 ]
 e-mail: *haopxpycary@foxmail.com*

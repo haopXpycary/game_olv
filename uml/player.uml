@@ -1,0 +1,60 @@
+basePlayer
+	+  behavingPlayer_armorMixIn
+    +  behavingPlayer_articleMixIn
+    +  behavingPlayer_attackMixIn
+    +  behavingPlayer_levelMixIn
+    +  behavingPlayer_moveMixIn
+    +  behavingPlayer_activityMixIn
+    +  behavingPlayer_additionalMixIn
+    +  behavingPlayer_moneyMixIn
+	
+# self.handheld = handheldThing()
+# handheldThing.enchanting
+# handheldThing.buffTime
+# handheldThing.durable
+# skill.consumedMagic
+# skill.lauch(player)
+
+addExp(int experiennce)
+addHealth
+addMagic
+addMoney
+addSatisfaction
+addThing(thing thing,^number)
+attack() -> (attack,handheld.enchanting,handheld.buffTime)
+decreaseAttack
+decreaseHealth
+decreaseMagic
+decreaseProtect
+decreaseRestoreHealth
+decreaseRestoreMagic
+handheldThing
+haveThing
+increaseAttack
+increaseHealth
+increaseMagic
+increaseProtect
+increaseRestoreHealth
+increaseRestoreMagic
+initActivity
+initAdditionalAttributes
+initArmor
+initBackpack()
+initBaseAttributes(int baseHealth,int baseProtect,int baseAttack,int baseMagic)
+initDevelopableAttributes(int developableHealth,int developableProtect,int developableAttack,int developableMagic)
+initLevel(^level,^experiennce)
+initMoney
+initPlace(int x,int y,constName.headfor headfor,char pic)
+initSkills(skill skills[5])
+launchSkills(int choice)
+lowerHealth
+lowerMagic
+lowerMoney
+lowerSatisfaction
+move(int x,int y)
+removeThing
+statisticsAttributes
+statisticsEquipmentProvided
+update
+walk(constName.headfor headfor)
+wearThing

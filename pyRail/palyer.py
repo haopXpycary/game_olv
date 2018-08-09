@@ -3,19 +3,6 @@ from control import *
 from func import dict
 
 class basePlayer:
-    '''
-    initPlace
-        : x,y(int)
-        : headfor(constName.headfor)
-        : pic(char)
-    initBaseAttributes
-        : base__(int)
-    initLevel
-    *    : level(int)
-    *    : experience(int)
-    initDevelopableAttributes
-        : developable___(int)
-    '''
     def initPlace(self,x,y,headfor,pic):
         self.x = x
         self.y = y
@@ -39,12 +26,6 @@ class basePlayer:
         self.developableMagic   = developableMagic
         
 class behavingPlayer_moveMixIn(basePlayer):
-    '''
-    walk
-        : headfor(constName.headfor)
-    move
-        : x,y(int)
-    '''
     def walk(self,headfor):
         self.headfor = headfor
         if headfor == Right:
@@ -59,13 +40,9 @@ class behavingPlayer_moveMixIn(basePlayer):
         self.x,self.y = x,y
     
 class behavingPlayer_levelMixIn(basePlayer):
-    '''
-    addExp
-        : exp(int)
-    '''
-    def addExp(self,exp):
-        self.exp += exp
-        while self.exp >= levelUpNeedExp(self.level):
+    def addExp(self,experience):
+        self.experience += experience
+        while self.experience >= levelUpNeedExp(self.level):
             self.level += 1
             self.baseHealth  += self.developableHealth
             self.baseProtect += self.developableProtect
@@ -73,19 +50,7 @@ class behavingPlayer_levelMixIn(basePlayer):
             self.baseMagic   += self.developableMagic
 
 class behavingPlayer_attackMixIn(basePlayer):
-    '''
-    attack
-        -> (attackValue,handheld.enchanting,handheld.buffTime)
-    initSillks
-        skills(skill[5])
-    launchSkills
-        choice(int)
-    '''
     def attack(self):
-        # self.handheld = handheldThing()
-        # handheldThing.enchanting
-        # handheldThing.buffTime
-        # handheldThing.durable
         if self.handheld:
             self.handheld.durable -= 1
             return (self.attack,self.handheld[0].enchanting,self.handheld[0].buffTime)
@@ -96,8 +61,6 @@ class behavingPlayer_attackMixIn(basePlayer):
         self.skills = skills
         
     def launchSkills(self,choice):
-        # skill.consumedMagic
-        # skill.lauch()
         if self.magic >= self.skills[choice].consumedMagic:
             self.magic -= self.skills[choice].consumedMagic
             self.skill[choice].launch(self)
@@ -243,7 +206,9 @@ class player(
 if __name__ == "__main__":
     sb = player()
     for i in dir(sb):
-        if not i.startswith("__"): print(i)
+        if not i.startswith("__"): 
+            print(i)
+            print(help(eval("sb."+i)))
     
     sb.initPlace(0,0,Right,">")
     sb.initBaseAttributes(20,5,10,10)

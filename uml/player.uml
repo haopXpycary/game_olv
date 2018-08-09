@@ -1,5 +1,5 @@
 basePlayer
-	+  behavingPlayer_armorMixIn
+    +  behavingPlayer_armorMixIn
     +  behavingPlayer_articleMixIn
     +  behavingPlayer_attackMixIn
     +  behavingPlayer_levelMixIn
@@ -7,54 +7,78 @@ basePlayer
     +  behavingPlayer_activityMixIn
     +  behavingPlayer_additionalMixIn
     +  behavingPlayer_moneyMixIn
-	
-# self.handheld = handheldThing()
+    
 # handheldThing.enchanting
 # handheldThing.buffTime
-# handheldThing.durable
+# handheldThing.durable 耐久
 # skill.consumedMagic
 # skill.lauch(player)
+# armor.protectionType
+# utensilThing.providedAttack
+# utensilThing.providedHealth
+# utensilThing.providedMagic
+# utensilThing.providedProtect
+# utensilThing.porvidedRestoreHealth
+# utensilThing.providedRestoreMagic
 
-addExp(int experiennce)
-addHealth
-addMagic
-addMoney
-addSatisfaction
-addThing(thing thing,^number)
+addExp(int)
+addHealth(int)
+addMagic(int)
+addMoney(int)
+addSatisfaction(int)
+addThing(thing thing,int ^number)
 attack() -> (attack,handheld.enchanting,handheld.buffTime)
-decreaseAttack
-decreaseHealth
-decreaseMagic
-decreaseProtect
-decreaseRestoreHealth
-decreaseRestoreMagic
-handheldThing
-haveThing
-increaseAttack
-increaseHealth
-increaseMagic
-increaseProtect
-increaseRestoreHealth
-increaseRestoreMagic
-initActivity
-initAdditionalAttributes
-initArmor
+decreaseAttack(int)
+decreaseHealth(int)
+decreaseMagic(int)
+decreaseProtect(int)
+decreaseRestoreHealth(int)
+decreaseRestoreMagic(int)
+handheldThing(thing weapory)
+haveThing(thing thing,int ^number)
+increaseAttack(int)
+increaseHealth(int)
+increaseMagic(int)
+increaseProtect(int)
+increaseRestoreHealth(int)
+increaseRestoreMagic(int)
+initActivity()
+initAdditionalAttributes()
+initArmor()
 initBackpack()
 initBaseAttributes(int baseHealth,int baseProtect,int baseAttack,int baseMagic)
 initDevelopableAttributes(int developableHealth,int developableProtect,int developableAttack,int developableMagic)
-initLevel(^level,^experiennce)
-initMoney
+initLevel(int ^level,int ^experiennce)
+initMoney()
 initPlace(int x,int y,constName.headfor headfor,char pic)
 initSkills(skill skills[5])
 launchSkills(int choice)
-lowerHealth
-lowerMagic
-lowerMoney
-lowerSatisfaction
+lowerHealth(int)
+lowerMagic(int)
+lowerMoney(int)
+lowerSatisfaction(int)
 move(int x,int y)
-removeThing
-statisticsAttributes
-statisticsEquipmentProvided
-update
+removeThing(thing thing,int ^number)
+statisticsAttributes()
+statisticsEquipmentProvided()
+update()
 walk(constName.headfor headfor)
-wearThing
+wearThing(thing armor)
+
++++++++++++++++++++++++++++++++++++++++++++++++++
+
+int x,y
+constName.Headfor headfor
+int health,attack,magic,protect
+int restoreHealth,restoreMagic
+int base___
+int developable___
+int additional___
+int equipmentProvided___
+int level,exp
+skill skills[5]
+dict<thing:number> backpack
+thing equipmentBar[5]
+thing handheld[1]
+int satisfaction
+int money

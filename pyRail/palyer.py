@@ -56,7 +56,7 @@ class behavingPlayer_attackMixIn(basePlayer):
             return (self.attack,self.handheld[0].enchanting,self.handheld[0].buffTime)
         return (self.attack,0,0)
         
-    def initSkills(self,*skills):
+    def initSkills(self,skills):
         # :skills = (skill_1:skill,skill_2:skill,...,skill_5:skill)
         self.skills = skills
         
@@ -98,7 +98,6 @@ class behavingPlayer_armorMixIn(basePlayer):
         self.equipmentProvidedRestoreMagic  = 0
         
     def wearThing(self,armor):
-        # armor.protectionType
         if self.equipmentBar[armor.protectionType]:
             self.addThing(self.equipmentBar[armor.protectionType])
         self.removeThing(armor)
@@ -111,12 +110,6 @@ class behavingPlayer_armorMixIn(basePlayer):
         self.equipmentBar[0] = weaponry
         
     def statisticsEquipmentProvided(self):
-        # utensilThing.providedAttack
-        # utensilThing.providedHealth
-        # utensilThing.providedMagic
-        # utensilThing.providedProtect
-        # utensilThing.porvidedRestoreHealth
-        # utensilThing.providedRestoreMagic
         for i in self.equipmentBar + self.handheld:
             if not i: continue;
             self.equipmentProvidedAttack  = i.providedAttack
@@ -208,7 +201,6 @@ if __name__ == "__main__":
     for i in dir(sb):
         if not i.startswith("__"): 
             print(i)
-            print(help(eval("sb."+i)))
     
     sb.initPlace(0,0,Right,">")
     sb.initBaseAttributes(20,5,10,10)

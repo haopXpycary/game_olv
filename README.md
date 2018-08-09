@@ -33,6 +33,7 @@ $ python3 main.py
 - constName      # 特殊变量l定义
 - screenOutput   # 控制屏幕输出
 - before         # 游戏初始化及定义
+- errorDefine    # Error定义
 - main           # 游戏运行
 ```
 

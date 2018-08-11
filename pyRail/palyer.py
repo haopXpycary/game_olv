@@ -50,7 +50,7 @@ class behavingPlayer_levelMixIn(basePlayer):
             self.baseMagic   += self.developableMagic
 
 class behavingPlayer_attackMixIn(basePlayer):
-    def attack(self):
+    def haveAttack(self):
         if self.handheld:
             self.handheld.durable -= 1
             return (self.attack,self.handheld[0].enchanting,self.handheld[0].buffTime)
@@ -195,7 +195,7 @@ class player(
         self.lowerSatisfaction(HUNGRY_DAILY_LOWER)
         self.addHealth(self,restoreHealth)
         self.addMagic(self,restoreMagic)
-        
+
 if __name__ == "__main__":
     sb = player()
     for i in dir(sb):

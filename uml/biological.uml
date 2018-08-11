@@ -1,0 +1,26 @@
+biological
+    +  superiorBiological
+
+# handheldThing.enchanting
+# handheldThing.buffTime
+# skill.consumedMagic
+# skill.lauch(biological)
+
+haveAttack() -> (attack,0,0) (attack,handheld.enchanting,handheld.buffTime)
+initAttributes(int health,protect,magic,attack,restoreHealth,restoreMagic)
+initDeathDrop(thing thing,int number)
+initHandheld(thing thing)
+initPlace(int x,int y,char pic)
+initSkills(skill skills[5])
+launchSkills(int choice)
+
++++++++++++++++++++++++++++++++++
+
+int health,protect,magic,attack
+int restoreHealth,restoreMagic
+thing dealthDropThing
+int dealthDropNumber
+thing[] handheld
+int x,y
+char pic
+skill[5] skills

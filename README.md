@@ -29,6 +29,8 @@ $ python3 main.py
 ```
 - player         # 玩家行为及属性定义
 - playerDefine   # 玩家生成
+- biological     # 生物定义
+- biologicalDe.. # 生物生成
 - thing          # 物品定义
 - thingDefine    # 物品生成
 - skill          # 技能定义
@@ -40,6 +42,13 @@ $ python3 main.py
 - before         # 游戏初始化及定义
 - errorDefine    # Error定义
 - main           # 游戏运行
+```
+
+/uml
+```
+- player
+- thing
+- biological
 ```
 
 ---

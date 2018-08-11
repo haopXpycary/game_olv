@@ -53,7 +53,7 @@ if SYSTEM == 0: # winsows
         elif bgcolor == DarkGreen: bgcon = "2"
         elif bgcolor == White: bgcon = "F"
         
-		# It may con't work.
+        # It may con't work.
         system("color "+bgcon+con)
         print(*other,end="")
         

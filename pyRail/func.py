@@ -34,33 +34,12 @@ if SYSTEM == 0: # winsows
     from os import system
     
     def cprint(color,bgcolor,*other):
-        if color == Black: con = "0"
-        elif color == Red: con = "4"
-        elif color == Green: con = "A"
-        elif color == Orange: con = "6"
-        elif color == Blue: con = "1"
-        elif color == Purple: con = "5"
-        elif color == DarkGreen: con = "2"
-        elif color == White: con = "F"
-        
-        
-        if bgcolor == Black: bgcon = "0"
-        elif bgcolor == Red: bgcon = "4"
-        elif bgcolor == Green: bgcon = "A"
-        elif bgcolor == Orange: bgcon = "6"
-        elif bgcolor == Blue: bgcon = "1"
-        elif bgcolor == Purple: bgcon = "5"
-        elif bgcolor == DarkGreen: bgcon = "2"
-        elif bgcolor == White: bgcon = "F"
-        
-        # It may con't work.
-        system("color "+bgcon+con)
-        print(*other,end="")
-        
-        system("color 0F")
+		# windows暂不支持
+		print(*other)
         
 elif SYSTEM == 1: # Linux | Unix
-    def cprint(color,bgcolor,*other):
+	from threading import Thread
+    def cprint(x,y,color=White,bgcolor=Black,*other):
         if not other: return;
         
         if color == Black: con = "\033[30m"
@@ -83,7 +62,21 @@ elif SYSTEM == 1: # Linux | Unix
         elif bgcolor == White: bgcon = "\033[47m"
         
         print(con+bgcon,"\b"+other[0],*other[1:],"\b\033[0m",end="")
-        
+		
+	class KeyboardListen(threading.Thread):
+		def __init__(self):
+			super().__init__(self)
+			
+			fd = sys.stdin.fileno()
+			old_settings = termios.tcgetattr(fd)
+			tty.setraw(sys.stdin.fileno(), termios.TCSANOW)
+			self.getch = sys.stdin.read
+			self.stop = False
+			
+		def run(self):
+			while not self.stop:
+				self.ch = getch(1)
+	
 else:
     raise SystemUncompatibleError("This game may not work on your system.")
     

@@ -77,6 +77,7 @@ int additional___
 int equipmentProvided___
 int level,exp
 skill skills[5]
+buff buffs[]
 dict<thing:number> backpack
 thing equipmentBar[5]
 thing handheld[1]

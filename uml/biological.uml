@@ -13,12 +13,14 @@ initHandheld(thing thing)
 initPlace(int x,int y,char pic)
 initSkills(skill skills[5])
 launchSkills(int choice)
+update()
 
 +++++++++++++++++++++++++++++++++
 
 int health,protect,magic,attack
 int restoreHealth,restoreMagic
 thing dealthDropThing
+buff[] buffs
 int dealthDropNumber
 thing[] handheld
 int x,y

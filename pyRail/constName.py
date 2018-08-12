@@ -4,14 +4,14 @@ Left  = 2
 Up    = 3
 Down  = 4
 
-#armorType
-HeadWear = 0
-NeckLackWear = 1
+# armorType
+HeadWear        = 0
+NeckLackWear    = 1
 BreastplateWear = 2
-PantsWear = 3
-ShoeWear = 4
+PantsWear       = 3
+ShoeWear        = 4
 
-#color
+# color
 White     = 0
 Green     = 1
 DarkGreen = 1.5
@@ -20,3 +20,10 @@ Purple    = 3
 Orange    = 4
 Black     = 5
 Red       = 6
+
+# toolType
+Axe    = 0
+Pick   = 1
+Shovel = 2
+Hoe    = 3
+Sword  = 4

@@ -1,4 +1,5 @@
 class biological:
+	buffs = []
     def initAttributes(self,health,protect,magic,attack,restoreHealth,restoreMagic):
         self.health = health
         self.protect = protect
@@ -19,7 +20,12 @@ class biological:
     
     def attack(self):
         return (self.attack,0,0)
-
+	
+    def update(self):
+        self.addHealth(self,restoreHealth)
+        self.addMagic(self,restoreMagic)
+		for i in self.buffs: i(self)
+		
 class superiorBiological(biological):
     def initHandheld(self,thing):
         self.handheld = (thing,)

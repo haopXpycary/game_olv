@@ -42,7 +42,7 @@ class behavingPlayer_moveMixIn(basePlayer):
 class behavingPlayer_levelMixIn(basePlayer):
     def addExp(self,experience):
         self.experience += experience
-        while self.experience >= levelUpNeedExp(self.level):
+        while self.experience >= LevelUpNeedExp(self.level):
             self.level += 1
             self.baseHealth  += self.developableHealth
             self.baseProtect += self.developableProtect
@@ -182,6 +182,7 @@ class player(
     behavingPlayer_activityMixIn,
     behavingPlayer_additionalMixIn,
     behavingPlayer_moneyMixIn):
+	buffs = []
     def statisticsAttributes(self):
         self.maxHealth = self.baseHealth  + self.equipmentProvidedHealth + self.additionalHealth
         self.health    = self.maxHealth
@@ -191,11 +192,13 @@ class player(
         self.attack    = self.baseAttack  + self.equipmentProvidedAttack + self.additionalAttack
         self.restoreHealth = self.equipmentProvidedRestoreHealth + self.additionalRestoreHealth
         self.restoreMagic  = self.equipmentProvidedRestoreMagic  + self.additionalRestoreMagic
+		
     def update(self):
-        self.lowerSatisfaction(HUNGRY_DAILY_LOWER)
+        self.lowerSatisfaction(HungryDailyLower)
         self.addHealth(self,restoreHealth)
         self.addMagic(self,restoreMagic)
-
+		for i in self.buffs: i(self)
+		
 if __name__ == "__main__":
     sb = player()
     for i in dir(sb):

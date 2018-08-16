@@ -1,0 +1,36 @@
+# buff.setTime(int)
+baseThing
+    init(int ID,char pic)
+    
+layoutThing(baseThing)
+    constName.event events[]
+    # howGet<0:time> get by hand
+    init(ID,pic,
+        constName.color color,bool couldPass,dict<thing thing:int time>howGet,dict<thing thing>willGet)
+    addEvent(event event)
+    layout(int x,int y)
+    
+utensilThing(baseThing)
+    int const
+    int buyConst
+    constName.color color
+    int levelUpConst
+    buff buff
+    init(ID,pic,
+        constName.utensilType utensilType,int durable,
+        int providedAttack,int providedHealth,int providedMagic,int providedProtect,
+        int providedRestoreHealth,int providedRestoreMagic)
+    initlevel(int level)
+    levelUp()
+    enchanting(buff buff,int time) 
+    mixIn(utensilThing other)
+    
+equippedThing(utensilThing)
+    constName.protectType utensilType
+    init(ID,pic,utensilType,durable,providedAttack,providedHealth,providedMagic,providedProtect,providedRestoreHealth,providedRestoreMagic)
+
+handheldThing(utensilThing)
+    init(ID,pic,utensilType,durable,providedAttack,providedMagic)
+    
+gropThing(layoutThing)
+    init(ID,pic,willGet,int growTime)

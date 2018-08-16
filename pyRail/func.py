@@ -31,14 +31,12 @@ class dict():
         return self.key
 
 if SYSTEM == 0: # winsows
-    from os import system
-    
     def cprint(color,bgcolor,*other):
-		# windows暂不支持
-		print(*other)
+        # windows暂不支持
+        print(*other)
         
 elif SYSTEM == 1: # Linux | Unix
-	from threading import Thread
+    from threading import Thread
     def cprint(x,y,color=White,bgcolor=Black,*other):
         if not other: return;
         
@@ -62,21 +60,21 @@ elif SYSTEM == 1: # Linux | Unix
         elif bgcolor == White: bgcon = "\033[47m"
         
         print(con+bgcon,"\b"+other[0],*other[1:],"\b\033[0m",end="")
-		
-	class KeyboardListen(threading.Thread):
-		def __init__(self):
-			super().__init__(self)
-			
-			fd = sys.stdin.fileno()
-			old_settings = termios.tcgetattr(fd)
-			tty.setraw(sys.stdin.fileno(), termios.TCSANOW)
-			self.getch = sys.stdin.read
-			self.stop = False
-			
-		def run(self):
-			while not self.stop:
-				self.ch = getch(1)
-	
+        
+    class KeyboardListen(threading.Thread):
+        def __init__(self):
+            super().__init__(self)
+            
+            fd = sys.stdin.fileno()
+            old_settings = termios.tcgetattr(fd)
+            tty.setraw(sys.stdin.fileno(), termios.TCSANOW)
+            self.getch = sys.stdin.read
+            self.stop = False
+            
+        def run(self):
+            while not self.stop:
+                self.ch = getch(1)
+    
 else:
     raise SystemUncompatibleError("This game may not work on your system.")
     

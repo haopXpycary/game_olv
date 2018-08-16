@@ -25,6 +25,11 @@ class basePlayer:
         self.developableAttack  = developableAttack
         self.developableMagic   = developableMagic
         
+    def layoutThing(self,thing):
+        if self.haveThing(thing):
+            self.removeThing(thing,1)
+            self.thing.layout(self.x,self.y)
+        
 class behavingPlayer_moveMixIn(basePlayer):
     def walk(self,headfor):
         self.headfor = headfor
@@ -182,7 +187,7 @@ class player(
     behavingPlayer_activityMixIn,
     behavingPlayer_additionalMixIn,
     behavingPlayer_moneyMixIn):
-	buffs = []
+    buffs = []
     def statisticsAttributes(self):
         self.maxHealth = self.baseHealth  + self.equipmentProvidedHealth + self.additionalHealth
         self.health    = self.maxHealth
@@ -192,13 +197,13 @@ class player(
         self.attack    = self.baseAttack  + self.equipmentProvidedAttack + self.additionalAttack
         self.restoreHealth = self.equipmentProvidedRestoreHealth + self.additionalRestoreHealth
         self.restoreMagic  = self.equipmentProvidedRestoreMagic  + self.additionalRestoreMagic
-		
+        
     def update(self):
         self.lowerSatisfaction(HungryDailyLower)
         self.addHealth(self,restoreHealth)
         self.addMagic(self,restoreMagic)
-		for i in self.buffs: i(self)
-		
+        for i in self.buffs: i(self)
+        
 if __name__ == "__main__":
     sb = player()
     for i in dir(sb):

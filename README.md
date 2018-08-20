@@ -22,9 +22,8 @@ $ python3 main.py
 - [x] thing
 - [ ] thingDefine
 - [ ] event & eventDefine
-- [ ] xmlAnalysis
 - [x] keybroadListen
-- [ ] screenOutput
+- [x] screenOutput
 - [ ] main & before
 
 
@@ -33,7 +32,7 @@ $ python3 main.py
 ```
 pyRail/       存放python脚本文件及外部库[ py ]
    tests/     测试文件
-   define/    定义文件[ xml ]
+   ofimport/  内部库[ py ]
 uml/          对于pyRail的项目规划[ uml ]
 ```
 
@@ -60,7 +59,9 @@ uml/          对于pyRail的项目规划[ uml ]
 
 /uml
 ```
+- MAIN
 - player
+- skill
 - thing
 - biological
 ```

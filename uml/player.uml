@@ -7,7 +7,8 @@ basePlayer
     +  behavingPlayer_activityMixIn
     +  behavingPlayer_additionalMixIn
     +  behavingPlayer_moneyMixIn
-    
+player
+
 # handheldThing.enchanting
 # handheldThing.buffTime
 # handheldThing.durable 耐久
@@ -47,6 +48,7 @@ initAdditionalAttributes()
 initArmor()
 initBackpack()
 initBaseAttributes(int baseHealth,int baseProtect,int baseAttack,int baseMagic)
+initBaseMsg(str name,constName.sex ^sex,int ^age)
 initDevelopableAttributes(int developableHealth,int developableProtect,int developableAttack,int developableMagic)
 initLevel(int ^level,int ^experiennce)
 initMoney()
@@ -68,6 +70,10 @@ wearThing(thing armor)
 
 +++++++++++++++++++++++++++++++++++++++++++++++++
 
+
+str name
+constName.sex sex
+int age
 int x,y
 constName.Headfor headfor
 int health,attack,magic,protect

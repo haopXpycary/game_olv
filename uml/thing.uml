@@ -8,7 +8,7 @@ layoutThing(baseThing)
     init(ID,pic,
         constName.color color,bool couldPass,dict<thing thing:int time>howGet,dict<thing thing>willGet)
     addEvent(event event)
-    layout(int x,int y)
+    *layout(int x,int y)
     
 utensilThing(baseThing)
     int const

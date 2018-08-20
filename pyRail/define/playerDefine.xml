@@ -1,6 +1,0 @@
-<player name="Example">
-  <initBaseAttributes baseHealth=1,baseProtect=2,baseAttack=3,baseMagic=4 />
-  <initDevelopableAttributes developableHealth=1,developableProtect=2,developableAttack=3,developableMagic=4 />
-  <initPlace x=0,y=0,headfor=Right, pic="o" />
-  <initSkills skill1="skill_name" skill2="" skill3="" skill4="" skill5="" />
-</player>

@@ -3,6 +3,11 @@ from control import *
 from func import dict
 
 class basePlayer:
+	def initBaseMsg(self,name,sex=Undefine,age=Undefine):
+		self.name = name
+		self.sex  = sex
+		self.age  = age
+		
     def initPlace(self,x,y,headfor,pic):
         self.x = x
         self.y = y

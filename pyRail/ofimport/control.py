@@ -17,3 +17,5 @@ AttachmentURate = 1.3
 LevelUpGrowthRate = 1.7
 # 升级花费增长倍数
 UpgradeCostIncreaseMultiple = 20
+# 屏幕大小
+MaxScrX,MaxScrY = 10,10

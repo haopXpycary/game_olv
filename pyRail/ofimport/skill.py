@@ -6,10 +6,10 @@ class skill:
     '''
     def initSkill(self,consumedMagic,_skill):
         self.consumedMagic = consumedMagic
-        self._skill = _skill
+        self.skill_ = _skill
         
     def lauch(self,other):
-        self._skill(other)
+        self.skill_(other)
 
 class buff:
     def initBuff(self,_buff,time=0):

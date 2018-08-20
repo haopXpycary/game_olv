@@ -31,15 +31,16 @@ class dict():
         return self.key
 
 if SYSTEM == 0: # winsows
-    def cprint(color,bgcolor,*other):
+    def cprint(x,y,other,color=White,bgcolor=Black):
         # windows暂不支持
-        print(*other)
+        print(other)
         
 elif SYSTEM == 1: # Linux | Unix
     from threading import Thread
-    def cprint(x,y,color=White,bgcolor=Black,*other):
+    def cprint(x,y,other,color=White,bgcolor=Black):
         if not other: return;
-        
+        scon = "\033[%d;%dH" %(y,x)
+		
         if color == Black: con = "\033[30m"
         elif color == Red: con = "\033[31m"
         elif color == Green: con = "\033[32m"
@@ -59,7 +60,7 @@ elif SYSTEM == 1: # Linux | Unix
         elif bgcolor == DarkGreen: bgcon = "\033[46m"
         elif bgcolor == White: bgcon = "\033[47m"
         
-        print(con+bgcon,"\b"+other[0],*other[1:],"\b\033[0m",end="")
+        print(con+bgcon+other,end="")
         
     class KeyboardListen(threading.Thread):
         def __init__(self):

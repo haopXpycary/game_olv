@@ -1,0 +1,10 @@
+skill
+	void skill_(player)
+	initSkill(int consumedMagic, func skill_)
+	lauch(player|biological other)
+	
+buff
+	void buff(player)
+	initBuff(func _buff,int ^time)
+	setTime(int time)
+	buffing(player|biological other)

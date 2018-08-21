@@ -1,6 +1,6 @@
-from ofimport.control import *
-for ofimport.constName import *
-for ofimport.func import cprint
+from control import *
+from constName import *
+from func import cprint
 
 from copy import deepcopy
 

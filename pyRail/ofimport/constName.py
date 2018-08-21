@@ -36,3 +36,11 @@ Flush   = 1
 Undefine = 0
 Man      = 1
 Woman    = 2
+
+# inscriptionAddintionType
+Health  = 1
+Protect = 2
+Magic   = 3
+Attack  = 4
+RestoreHealth = 5
+RestoreMagic  = 6

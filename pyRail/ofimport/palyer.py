@@ -3,11 +3,11 @@ from control import *
 from func import dict
 
 class basePlayer:
-	def initBaseMsg(self,name,sex=Undefine,age=Undefine):
-		self.name = name
-		self.sex  = sex
-		self.age  = age
-		
+    def initBaseMsg(self,name,sex=Undefine,age=Undefine):
+        self.name = name
+        self.sex  = sex
+        self.age  = age
+        
     def initPlace(self,x,y,headfor,pic):
         self.x = x
         self.y = y
@@ -112,12 +112,19 @@ class behavingPlayer_armorMixIn(basePlayer):
             self.addThing(self.equipmentBar[armor.protectionType])
         self.removeThing(armor)
         self.equipmentBar[armor.protectionType] = armor
-        
+        self.statisticsEquipmentProvided()
+    
+    def putonThing(thing,armor):
+        if armor in self.equipmentBar:
+            del self.equipmentBar[self.equipmentBar.index(armor)]
+            self.addThing(armor)
+            
     def handheldThing(self,weaponry):
         if self.handheld[0]:
             self.addThing(self.handheld[0])
         self.removeThing(weaponry)
         self.equipmentBar[0] = weaponry
+        self.statisticsEquipmentProvided()
         
     def statisticsEquipmentProvided(self):
         for i in self.equipmentBar + self.handheld:
@@ -153,7 +160,7 @@ class behavingPlayer_activityMixIn(basePlayer):
             self.magic = self.maxMagic
     def lowerMagic(self,number):
         self.magic -= number
-    
+        
 class behavingPlayer_additionalMixIn(basePlayer):
     def initAdditionalAttributes(self):
         self.additionalHealth  = 0
@@ -162,6 +169,8 @@ class behavingPlayer_additionalMixIn(basePlayer):
         self.additionalAttack  = 0
         self.additionalRestoreHealth = 0
         self.additionalRestoreMagic  = 0
+    def initInscription(self):
+        self.inscriptions = []
         
     def increaseHealth(self,number):  self.additionalHealth += number
     def decreaseHealth(self,number):  self.additionalHealth -= number
@@ -175,7 +184,27 @@ class behavingPlayer_additionalMixIn(basePlayer):
     def decreaseRestoreHealth(self,number): self.additionalRestoreHealth -= number
     def increaseRestoreMagic(self,number):  self.additionalRestoreMagic += number
     def decreaseRestoreMagic(self,number):  self.additionalRestoreMagic -= number
-
+    def addInscription(self,inscription):
+        if self.haveThing(inscription):
+            self.inscriptions.append(inscription)
+            self.removeThing(inscription)
+            self.statisticsInscription()
+        
+    def removeInscription(self.inscription):
+        if inscription in self.inscriptions:
+            del self.inscriptions[self.inscriptions.index(inscription)]
+            self.addThing(inscription)
+            self.statisticsInscription()
+            
+    def statisticsInscription(self):
+        for i in self.inscriptions:
+            if i.addintionType == Health: self.additionalHealth += i.addintionValue
+            elif i.addintionType == Protect: self.additionalProtect += i.addintionValue
+            elif i.addintionType == Magic: self.additionalMagic += i.addintionValue
+            elif i.addintionType == Attack: self.additionalAttack += i.addintionValue
+            elif i.addintionType == RestoreHealth: self.additionalRestoreHealth += i.addintionValue
+            elif i.addintionType == RestoreMagic: self.additionalRestoreMagic += i.addintionValue
+            
 class behavingPlayer_moneyMixIn(basePlayer):
     def initMoney(self):
         self.money = 0

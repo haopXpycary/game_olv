@@ -40,7 +40,7 @@ elif SYSTEM == 1: # Linux | Unix
     def cprint(x,y,other,color=White,bgcolor=Black):
         if not other: return;
         scon = "\033[%d;%dH" %(y,x)
-		
+        
         if color == Black: con = "\033[30m"
         elif color == Red: con = "\033[31m"
         elif color == Green: con = "\033[32m"

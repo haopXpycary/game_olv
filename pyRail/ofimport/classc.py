@@ -4,6 +4,6 @@ class event:
         self.triggerFunc = fun
         
     def touch(self):   
-		self.touch = True
-		self.triggerFunc()
+        self.touch = True
+        self.triggerFunc()
     def untouch(self): self.touch = False

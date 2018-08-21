@@ -1,18 +1,18 @@
 dict()
     key[]
-	value[]
-	__setitem__()
-	__getitem__()
-	__delitem__()
-	clear()
-	keys()   -> key
-	values() -> value
+    value[]
+    __setitem__()
+    __getitem__()
+    __delitem__()
+    clear()
+    keys()   -> key
+    values() -> value
 cprint(int x,int y,str other,constName.color color,constName.color bgcolor)
 
 screenOutput()
-	int x|y = control.MaxScrX|MaxScrY
-	[[[char pic,constName.color color,flag=Flush|Unflush]*x]*y] screen|nscreen
-	update(int x,int y,char pic,constName.color color,Flush|Unflush flag)
-	show()
-	updateShow()
-	
+    int x|y = control.MaxScrX|MaxScrY
+    [[[char pic,constName.color color,flag=Flush|Unflush]*x]*y] screen|nscreen
+    update(int x,int y,char pic,constName.color color,Flush|Unflush flag)
+    show()
+    updateShow()
+    

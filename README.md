@@ -21,6 +21,8 @@ $ python3 main.py
 - [ ] buffDefine
 - [x] thing
 - [ ] thingDefine
+- [x] inscription
+- [ ] inscriptionDefine
 - [ ] event & eventDefine
 - [x] keybroadListen
 - [x] screenOutput

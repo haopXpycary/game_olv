@@ -1,6 +1,6 @@
 ## 帮助文档
 
-### [ 运行 ]
+### [ 运行文件 ]
 环境要求: <br />
 系统:  GNU/Linux | Unix <br />
 语言:  python3 [ 测试环境为3.7.0 ]
@@ -10,7 +10,7 @@ $ chmod +x main.py
 $ python3 main.py
 ```
 
-### [ 完成度 ]
+### [ 完成程度 ]
 
 - [x] player
 - [ ] playerDefine
@@ -28,6 +28,16 @@ $ python3 main.py
 - [x] screenOutput
 - [ ] main & before
 
+### [ 功能浏览 ]
+
+```
+装备
+魔法
+附魔
+铭文
+药水
+buff
+```
 
 ### [ 项目结构 ]
 
@@ -41,7 +51,7 @@ uml/          对于pyRail的项目规划[ uml ]
 详情请查阅uml/
 
 
-###  [ 目录 ]
+###  [ 目录列表 ]
 /pyRail
 ```
 - player         # 玩家行为及属性定义
@@ -91,3 +101,6 @@ uml/          对于pyRail的项目规划[ uml ]
 
 ### [ 联系方式 ]
 e-mail: *haopxpycary@foxmail.com*
+
+### [ biu~ ]
+[一个神奇的地方](https://www.bilibili.com/bangumi/play/ep12514)

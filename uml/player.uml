@@ -87,6 +87,7 @@ int base___
 int developable___
 int additional___
 int equipmentProvided___
+int maxHealth,maxMagic
 int level,exp
 skill skills[5]
 buff buffs[]

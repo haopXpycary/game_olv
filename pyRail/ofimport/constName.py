@@ -1,3 +1,6 @@
+# base
+Null = 0
+
 # headfor
 Right = 1
 Left  = 2

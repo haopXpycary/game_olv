@@ -16,3 +16,19 @@ screenOutput()
     show()
     updateShow()
     
+keyboardListen(threading.Thread)
+    using:
+    '''
+    >>> get = keyboardListen()
+    >>> get.start()
+    >>> while True:
+    ...     ch = get.ch
+    ...     get.ch = False # or constName.Null
+    '''
+clear()
+
+event()
+    triggerFunc -> func()
+    bool touched
+    touch()
+    untouch()

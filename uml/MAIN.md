@@ -1,21 +1,17 @@
 ### Program
 
-<p style="color: #B0C4DE">
-st=>start:     Text
-op=>operation: Text
-co=>condition: Text
-ed=>end:       Text
-st->op->cond
-cond(yes)->ed
-cond(no)->op
-</p>
-
 ```flow
 start=>start: Start
+constName=>condition: constName & control 
+msg=>operation: # Not allowed to import anything
+func=>operation: function & class
+define=>operation: define
 before=>operation: before
 main=>operation: main
 callBack=>operation: callBack
 end=>end: End
 
-start->before->main->callBack->end
+start->constName
+constName(no)->func->define->before->main->callBack->end
+constName(yes)->msg
 ```

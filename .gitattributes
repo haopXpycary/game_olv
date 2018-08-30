@@ -3,3 +3,4 @@
 *.txt      text
 *.pyc      -text
 *.uml      text
+*.svg      -text

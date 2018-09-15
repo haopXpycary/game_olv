@@ -60,9 +60,12 @@ def cprint(x,y,other,color=White,bgcolor=Black):
     
     print(con+bgcon+other,end="")
     
+import sys
+import tty
+import termios
 class keyboardListen(Thread):
     def __init__(self):
-        super().__init__(self)
+        super().__init__()
         
         fd = sys.stdin.fileno()
         old_settings = termios.tcgetattr(fd)

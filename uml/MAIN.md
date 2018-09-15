@@ -15,3 +15,5 @@ start->constName
 constName(no)->func->define->before->main->callBack->end
 constName(yes)->msg
 ```
+
+![main_uml](https://github.com/haopXpycary/game_olv/blob/master/uml/main_uml.svg)

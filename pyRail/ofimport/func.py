@@ -1,6 +1,6 @@
-from control import SYSTEM
-from errorDefine import SystemUncompatibleError
-from constName import *
+from .control import SYSTEM
+from .errorDefine import SystemUncompatibleError
+from .constName import *
 
 
 from threading import Thread
@@ -60,7 +60,7 @@ def cprint(x,y,other,color=White,bgcolor=Black):
     
     print(con+bgcon+other,end="")
     
-class keyboardListen(threading.Thread):
+class keyboardListen(Thread):
     def __init__(self):
         super().__init__(self)
         
@@ -85,6 +85,7 @@ class event:
         self.touched = True
         self.triggerFunc()
     def untouch(self): self.touched = False
+	
 if __name__ == "__main__":
     dic = dict()
     dic['he'] = 3

@@ -1,3 +1,5 @@
+import os
+
 from ofimport.errorDefine import *
 from ofimport.constName   import *
 from ofimport.control     import *
@@ -15,7 +17,7 @@ print("\033[?25l",end="")
 os.system("clear")
 
 #监听键盘
-get = keyboardListen(getch)
+get = keyboardListen()
 get.start()
 
 #屏幕初始化

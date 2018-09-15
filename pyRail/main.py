@@ -7,3 +7,6 @@ from before import *
 while True:
     pressKey = get.ch
     get.ch = Null
+    
+    while True:
+        print(pressKey)

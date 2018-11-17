@@ -23,7 +23,7 @@ class screenOutput:
     def show(self):
         for i in range(len(self.nscreen)):
             for j in range(len(self.nscreen[i])):
-                cprint(j,i,,self.nscreen[i][j][0],self.nscreen[i][j][1],Black)
+                cprint(j,i,self.nscreen[i][j][0],self.nscreen[i][j][1],Black)
                 if self.nscreen[i][j][2] == Flush: self.nscreen[i][j] = [' ', White, Unflush]
         self.screen = deepcopy(self.nscreen)
         

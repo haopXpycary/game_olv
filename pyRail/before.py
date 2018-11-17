@@ -4,7 +4,7 @@ from ofimport.errorDefine import *
 from ofimport.constName   import *
 from ofimport.control     import *
 from ofimport.func        import *
-
+from ofimport.screenOutput import *
 #==============system test=================
 if SYSTEM == 1: # Linux | Unix 
     pass

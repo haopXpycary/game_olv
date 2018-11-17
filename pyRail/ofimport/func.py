@@ -75,7 +75,7 @@ class keyboardListen(Thread):
         
     def run(self):
         while not self.stop:
-            self.ch = getch(1)
+            self.ch = self.getch(1)
 
 def clear(): system("clear")
 
